@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Logger Admin</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto p-6">
+
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-4xl font-extrabold text-blue-600">Twitch Chat Logger</h1>
+      <p class="mt-2 text-gray-600">Control batch size & monitor health in real time</p>
+    </header>
+
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- Batch Size Card -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold mb-4">Batch Size</h2>
+        <label for="batchInput" class="block text-sm font-medium mb-1">Messages per Batch</label>
+        <input id="batchInput" type="number" min="1"
+          class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        <button id="updateBtn"
+          class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded py-2 transition">
+          Update Batch Size
+        </button>
+      </section>
+
+      <!-- Health Stats Card -->
+      <section class="bg-white p-6 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold mb-4">Health Stats</h2>
+        <div class="space-y-4">
+          <div class="flex justify-between">
+            <span class="font-medium">Processed Count:</span>
+            <span id="count" class="font-mono">–</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium">Last Processed:</span>
+            <span id="last" class="font-mono">–</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
